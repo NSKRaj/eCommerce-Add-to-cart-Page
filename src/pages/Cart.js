@@ -17,10 +17,10 @@ export const Cart = () => {
       </div>
       <div className='cart-page'>
         <div className='cartItems'>
-          {Products.map((product) => { if (cartItems[product.id] !== 0) {
-              return <CartItem data={product} />;
-            } 
-          })}
+          {Products.map((product) => {
+           return ((cartItems[product.id] !== 0) ? <CartItem data={product} /> : "" )
+          }
+          )}
         </div>
         <div className='checkout'>
           {totalAmount > 0 ? (
